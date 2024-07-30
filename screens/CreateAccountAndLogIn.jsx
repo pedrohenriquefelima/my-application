@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 import { Text, SafeAreaView, Button} from "react-native";
 
 export default function CreateAccountAndLogIn({route, navigation}) {
-    const welcomeMode = route.params.createOrSignIn;
+    const welcomeMode = route?.params?.createOrSignIn;
     useLayoutEffect(() => {
         navigation.setOptions({
             title: welcomeMode
