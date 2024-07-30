@@ -1,5 +1,6 @@
 import { useLayoutEffect } from "react";
-import { Text, SafeAreaView, Button} from "react-native";
+import { Text, View, Button, StyleSheet} from "react-native";
+import { colors } from "../utils/colors";
 
 export default function CreateAccountAndLogIn({route, navigation}) {
     const welcomeMode = route?.params?.createOrSignIn;
@@ -14,12 +15,28 @@ export default function CreateAccountAndLogIn({route, navigation}) {
     }
 
     return (
-        <SafeAreaView>
-            <Text>View mode - create or login {welcomeMode}</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>{welcomeMode}</Text>
+            {/* form goes here */}
+            {/* alternative create account */}
+            {/* already have an account */}
             <Button
                 title="Go home"
                 onPress={goHome}
             />
-        </SafeAreaView>
+        </View>
     )
 }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: colors.white,
+        paddingTop: 30,
+        paddingHorizontal: 20
+    },
+    title: {
+        fontSize: 30,
+        fontWeight: '700'
+    }
+})
