@@ -13,7 +13,10 @@ export default function Navigation() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }}/>
-                <Stack.Screen name="CreateOrLogin" component={CreateAccountAndLogIn}/>
+                <Stack.Screen name="CreateOrLogin" component={CreateAccountAndLogIn} options={{
+                        headerTitle: '',
+                        headerBackTitleVisible: true
+                    }}/>
                 <Stack.Screen name="MainHome" component={Home} options={{ headerLeft: () => null }} />
             </Stack.Navigator>
         </NavigationContainer>
