@@ -6,16 +6,22 @@ export default function Welcome({navigation}) {
       
     return (
         <View style={styles.container}>
-            <Image source={require("../assets/welcome-running.jpg")} style={styles.welcomeImage}/>
-            <Text style={styles.hiWelcome}>Hi, Welcome!</Text>
-            <Text style={styles.hiWelcomeSub}>
-                This is some dummy text. It takes up three lines of text to show you an example of how your text will look.
-            </Text>
-            <TouchableOpacity style={styles.createAccount} onPress={() => navigation.navigate('CreateOrLogin')}>
-                <Text style={styles.createAccountText}>Create account</Text>
-            </TouchableOpacity>
-            <View>
-                <Button title="Log in" onPress={() => navigation.navigate('CreateOrLogin')} />
+            <View style={styles.flexOne}>
+                <Image source={require("../assets/welcome-running.jpg")} style={styles.welcomeImage}/>
+            </View>
+            <View style={styles.flexTwo}>
+                <Text style={styles.hiWelcome}>Hi, Welcome! 👋</Text> 
+                <Text style={styles.hiWelcomeSub}>
+                    This is some dummy text. It takes up three lines of text to show you an example of how your text will look.
+                </Text>
+            </View>
+            <View style={styles.flexThree}>
+                <TouchableOpacity style={styles.createAccount} onPress={() => navigation.navigate('CreateOrLogin')}>
+                    <Text style={styles.buttonText}>Create account</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.loginAccount}  onPress={() => navigation.navigate('CreateOrLogin')}>
+                    <Text style={styles.buttonText}>Log in</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -24,15 +30,25 @@ export default function Welcome({navigation}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
         backgroundColor: colors.white,
         alignItems: "center"
     },
+    flexOne: {
+        backgroundColor: 'blue',
+        width: '100%',
+        flex: 10
+    },
     welcomeImage: {
         width: '100%',
-        height: '55%'
+        height: '100%'
+    },
+    flexTwo: {
+        width: '100%',
+        flex: 4,
+        alignItems: "center"
     },
     hiWelcome: {
-        backgroundColor: 'red',
         fontSize: 30,
         fontWeight: '700',
         margin: 20,
@@ -43,7 +59,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 14,
         fontWeight: '500',
-        marginBottom: 20
+    },
+    flexThree: {
+        width: '100%',
+        flex: 3,
+        alignItems: 'center'
     },
     createAccount: {
         width: '90%',
@@ -52,11 +72,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: colors.primaryOrange,
         borderRadius: 10,
-        marginBottom: 10
+        marginBottom: 14
     },
-    createAccountText: {
+    buttonText: {
         color: colors.white,
         fontSize: 16,
         fontWeight: '600',
     },
+    loginAccount: {
+        width: '90%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: colors.primaryGreen,
+        borderRadius: 10,
+        marginBottom: 10
+    }
 })
