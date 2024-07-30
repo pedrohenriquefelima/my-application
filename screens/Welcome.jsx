@@ -16,10 +16,10 @@ export default function Welcome({navigation}) {
                 </Text>
             </View>
             <View style={styles.flexThree}>
-                <TouchableOpacity style={styles.createAccount} onPress={() => navigation.navigate('CreateOrLogin')}>
+                <TouchableOpacity style={styles.createAccount} onPress={() => navigation.navigate('CreateOrLogin', { createOrSignIn: 'create'})}>
                     <Text style={styles.buttonText}>Create account</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.loginAccount}  onPress={() => navigation.navigate('CreateOrLogin')}>
+                <TouchableOpacity style={styles.loginAccount}  onPress={() => navigation.navigate('CreateOrLogin', { createOrSignIn: 'login'})}>
                     <Text style={styles.buttonText}>Log in</Text>
                 </TouchableOpacity>
             </View>
