@@ -11,9 +11,10 @@ const Stack = createStackNavigator();
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }}/>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Welcome" component={Welcome}/>
                 <Stack.Screen name="CreateOrLogin" component={CreateAccountAndLogIn} options={{
+                        // Hide the title but keep the header
                         headerTitle: '',
                         headerBackTitleVisible: true
                     }}/>
