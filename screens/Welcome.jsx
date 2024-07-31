@@ -16,10 +16,10 @@ export default function Welcome({navigation}) {
                 </Text>
             </View>
             <View style={styles.flexThree}>
-                <TouchableOpacity style={styles.createAccount} onPress={() => navigation.navigate('CreateOrLogin', { createOrSignIn: 'create'})}>
+                <TouchableOpacity style={styles.createAccount} onPress={() => navigation.navigate('CreateOrLogin', { createOrSignIn: 'Create account'})}>
                     <Text style={styles.buttonText}>Create account</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.loginAccount}  onPress={() => navigation.navigate('CreateOrLogin', { createOrSignIn: 'login'})}>
+                <TouchableOpacity style={styles.loginAccount}  onPress={() => navigation.navigate('CreateOrLogin', { createOrSignIn: 'Login'})}>
                     <Text style={styles.buttonText}>Log in</Text>
                 </TouchableOpacity>
             </View>
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     flexOne: {
-        backgroundColor: 'blue',
         width: '100%',
         flex: 10
     },
