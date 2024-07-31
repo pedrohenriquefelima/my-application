@@ -29,7 +29,7 @@ export default function CreateAccountAndLogIn({route, navigation}) {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.subContainer}>
-                <TouchableOpacity style={styles.backButtonWrapper}>
+                <TouchableOpacity style={styles.backButtonWrapper} onPress={() => navigation.navigate('Welcome')}>
                     <Ionicons name="arrow-back" size={25} color={colors.black} />
                 </TouchableOpacity>
                 <Text style={styles.title}>{welcomeMode}</Text>
@@ -56,17 +56,10 @@ export default function CreateAccountAndLogIn({route, navigation}) {
                     </TouchableOpacity>
                 </View>
                <View style={styles.alternativeSeparatorContainer}>
-                    <View/>
+                    <View style={[styles.lineBorder, styles.marginRight]}/>
                     <Text>Or create account  with</Text>
-                    <View/>
+                    <View style={[styles.lineBorder, styles.marginLeft]}/>
                </View>
-                
-                {/* already have an account */}
-                {/* <Button
-                    title="Go home"
-                    onPress={goHome}
-                /> */}
-
             </View>
                 
         </SafeAreaView>
@@ -108,7 +101,6 @@ const styles = StyleSheet.create({
         borderColor: colors.grey,
         borderRadius: 10,
         borderWidth: 1,
-       
     },
     textInput: {
         flex: 1,
@@ -130,6 +122,25 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontSize: 16,
         fontWeight: '600',
+    },
+    alternativeSeparatorContainer: {
+        width: '90%',
+        marginTop: 40,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    lineBorder: {
+        backgroundColor: 'red',
+        width: '20%',
+        borderBottomColor: colors.grey,
+        borderBottomWidth: 2
+    },
+    marginRight: {
+        marginRight: 10
+    },
+    marginLeft: {
+        marginLeft: 10
     }
-    
+
 })

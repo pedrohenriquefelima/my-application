@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     flexOne: {
-        backgroundColor: 'blue',
         width: '100%',
         flex: 10
     },
