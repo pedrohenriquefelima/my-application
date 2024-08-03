@@ -5,6 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import AlternativeLogins from "../components/AlternativeLogins";
 
 export default function CreateAccountAndLogIn({route, navigation}) {
     const [secureEntry, setSecureEntry] = useState(false);
@@ -55,11 +56,14 @@ export default function CreateAccountAndLogIn({route, navigation}) {
                         <Text style={styles.buttonText}>Create account</Text>
                     </TouchableOpacity>
                 </View>
-               <View style={styles.alternativeSeparatorContainer}>
+                <View style={styles.alternativeSeparatorContainer}>
                     <View style={[styles.lineBorder, styles.marginRight]}/>
                     <Text>Or create account  with</Text>
                     <View style={[styles.lineBorder, styles.marginLeft]}/>
-               </View>
+                </View>
+                <View style={{marginTop: 40}}>
+                    <AlternativeLogins/>
+                </View>
             </View>
                 
         </SafeAreaView>
@@ -71,27 +75,25 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white,
     },
     subContainer: {
-        paddingLeft:10
+        marginHorizontal: 20
     },
     title: {
         marginTop: 20,
-        marginLeft:10,
         fontSize: 30,
         fontWeight: '700'
     },
     backButtonWrapper: {
         height: 40,
-        width: 40,
+        width: 20,
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center'
     },
     formContainer: {
-        marginLeft:10,
         marginTop: 40
     },
     inputContainer: {
-        width: '90%',
+        width: '100%',
         height: 48,
         flexDirection: 'row',
         alignItems: 'center',
@@ -107,10 +109,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     buttonContainer: {
-        marginLeft:10
+        width: '100%',
+        justifyContent: 'center',
     },
     createAccount: {
-        width: '90%',
+        width: '100%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
@@ -124,15 +127,14 @@ const styles = StyleSheet.create({
         fontWeight: '600',
     },
     alternativeSeparatorContainer: {
-        width: '90%',
+        width: '100%',
         marginTop: 40,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
     },
     lineBorder: {
-        backgroundColor: 'red',
-        width: '20%',
+        width: '25%',
         borderBottomColor: colors.grey,
         borderBottomWidth: 2
     },
