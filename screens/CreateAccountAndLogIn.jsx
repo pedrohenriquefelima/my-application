@@ -27,6 +27,10 @@ export default function CreateAccountAndLogIn({route, navigation}) {
         secureEntry ? setSecureEntryIcon('eye') : setSecureEntryIcon('eye-slash');
     }
 
+    function switchMode() {
+        console.log('mode switched');
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.subContainer}>
@@ -63,6 +67,12 @@ export default function CreateAccountAndLogIn({route, navigation}) {
                 </View>
                 <View style={{marginTop: 40}}>
                     <AlternativeLogins/>
+                </View>
+                <View style={styles.alreadyHave}>
+                    <Text>Already have an account? </Text>
+                    <TouchableOpacity onPress={switchMode}>
+                            <Text style={{fontWeight: 'bold'}}>Log in</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
                 
@@ -143,6 +153,12 @@ const styles = StyleSheet.create({
     },
     marginLeft: {
         marginLeft: 10
+    },
+    alreadyHave: {
+        flexDirection: 'row',
+        marginTop: '20%',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 
 })
