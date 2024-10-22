@@ -48,6 +48,13 @@ export default function AlternativeLogins() {
           // Add some error handling
         }
     };
+
+    /*
+    <Button
+        title="remove local store"
+        onPress={async () => await AsyncStorage.removeItem("@user")}
+      />
+    */
     
     return (
         <SafeAreaView>
